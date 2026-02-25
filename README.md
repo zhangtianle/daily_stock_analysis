@@ -220,6 +220,18 @@ python main.py
 领涨: 互联网服务、文化传媒、小金属
 领跌: 保险、航空机场、光伏设备
 ```
+## 🔄 代码同步与冲突处理
+
+```bash
+# 先配置 remote（示例）
+git remote add origin <your-fork-or-upstream-url>
+
+# 同步并自动检查冲突标记
+scripts/sync_repo.sh origin main
+```
+
+> 若网络或权限受限导致 `git fetch` 失败，请先修复网络/凭据；脚本会在同步后自动检查未解决冲突标记。
+
 ## ⚙️ 配置说明
 
 > 📖 完整环境变量、定时任务配置请参考 [完整配置指南](docs/full-guide.md)
