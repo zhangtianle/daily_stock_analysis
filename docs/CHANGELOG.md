@@ -6,6 +6,7 @@
 版本号遵循 [Semantic Versioning](https://semver.org/lang/zh-CN/)。
 
 ## [Unreleased]
+- 🧠 新增 A股/美股大盘分析策略系统：复盘 Prompt 注入区域化策略蓝图，并在输出中增加“策略计划”章节，统一给出仓位与风险触发条件建议。
 
 ### 新增（#minor）
 - 📅 **交易日判断**（Issue #373）
@@ -28,6 +29,7 @@
   - 扩展 `analysis_tools` 与 `data_tools`，优化策略问股的工具调用链路与分析覆盖
 
 ### 修复（#patch）
+- 🛠️ 修复策略计划与工作流时间注释：策略计划模板强制附带“仅供参考，不构成投资建议”合规提示；修正 `daily_analysis.yml` 中 UTC/北京时间注释并同步 README 执行时间说明。
 - 🐛 **修复 HTTP 非安全上下文下 /chat 页面黑屏**（Issue #377）
   - `crypto.randomUUID()` 仅在 HTTPS/localhost 安全上下文中可用，通过 `http://IP:port` 访问时页面崩溃黑屏
   - 新增 `apps/dsa-web/src/utils/uuid.ts`，提供带 fallback 的 `generateUUID()` 工具函数
